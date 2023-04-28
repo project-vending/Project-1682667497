@@ -1,0 +1,21 @@
+python
+import os
+
+# Define the base directory for the project
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Define the path to the requirements.txt file
+REQUIREMENTS_FILE = os.path.join(BASE_DIR, 'api', 'requirements.txt')
+
+# Define the packages required for the API
+REQUIRED_PACKAGES = [
+    'fastapi',
+    'uvicorn'
+]
+
+# Write the package names to the requirements.txt file
+with open(REQUIREMENTS_FILE, 'w') as f:
+    for package in REQUIRED_PACKAGES:
+        f.write(package + '\n')
+
+print('Requirements written to file successfully!')
