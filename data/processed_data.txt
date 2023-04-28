@@ -1,0 +1,13 @@
+python
+import os
+
+# Define the file path
+file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "processed_data.txt")
+
+# Create the file if it does not exist
+if not os.path.exists(file_path):
+    open(file_path, 'w').close()
+
+# Write data to the file
+with open(file_path, 'w') as f:
+    f.write("This is an example of processed data.")
